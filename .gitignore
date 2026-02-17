@@ -1,0 +1,9 @@
+target/
+.idea/
+.gradle/
+build/
+*.log
+dependency-reduced-pom.xml
+*.class
+.DS_Store
+*.iml
