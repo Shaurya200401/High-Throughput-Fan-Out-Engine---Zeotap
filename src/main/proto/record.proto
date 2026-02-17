@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.zeotap.fanout.proto;
+
+option java_package = "com.zeotap.fanout.proto";
+option java_multiple_files = true;
+
+message KeyValue {
+    string key = 1;
+    string value = 2;
+}
+
+message ProtoRecord {
+    map<string, string> data = 1;
+}

@@ -1,0 +1,8 @@
+{
+  "type": "record",
+  "name": "AvroRecord",
+  "namespace": "com.zeotap.fanout.avro",
+  "fields": [
+    {"name": "data", "type": {"type": "map", "values": "string"}}
+  ]
+}
