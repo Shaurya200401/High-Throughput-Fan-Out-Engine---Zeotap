@@ -23,17 +23,6 @@ A high-throughput Java application that reads records from a file source and dis
 ## Architecture
 The system follows a **Fan-Out** architecture using the **Strategy Pattern** for transformations and sinks.
 
-```mermaid
-graph LR
-    A[Source File] -->|Stream| B(Ingestion Layer)
-    B -->|Record| C{Fan-Out Engine}
-    C -->|Async| D[Transformer A]
-    C -->|Async| E[Transformer B]
-    D -->|JSON| F[REST Sink (Mock)]
-    E -->|Avro| G[DB Sink (Mock)]
-    style C fill:#f9f,stroke:#333
-```
-
 1.  **Ingestion**: `Source` reads files line-by-line (streaming) to keep memory usage low.
 2.  **Transformation**: `Transformer` converts the raw record into the target sink format (JSON, Avro, etc.).
 3.  **Distribution**: `Sink` sends the data to the destination (Mocked).
